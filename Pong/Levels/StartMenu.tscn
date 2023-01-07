@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://pong_assets/Kenney_Pixel.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/StartMenu.gd" type="Script" id=2]
+
+[node name="StartMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 2 )
+
+[node name="Title" type="Label" parent="."]
+margin_left = 177.0
+margin_top = 53.0
+margin_right = 387.0
+margin_bottom = 128.0
+custom_fonts/font = ExtResource( 1 )
+text = "(Not) Pong
+"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 190.0
+margin_top = 132.0
+margin_right = 370.0
+margin_bottom = 174.0
+custom_fonts/font = ExtResource( 1 )
+text = "Start Game"
+
+[node name="Instructions" type="Label" parent="."]
+margin_left = 223.0
+margin_top = 210.0
+margin_right = 349.0
+margin_bottom = 360.0
+text = "Controls:
+
+Left Paddle-
+W- Up
+S- Down
+
+Right Paddle-
+Arrow Up- Up
+Arrow Down- Down"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

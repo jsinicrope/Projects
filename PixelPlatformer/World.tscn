@@ -1,0 +1,161 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Objects/Spike.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/TileMap.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Objects/Goal.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scripts/Goal.gd" type="Script" id=5]
+[ext_resource path="res://Characters/Enemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/World.gd" type="Script" id=7]
+[ext_resource path="res://Assets/PixelFont.tres" type="DynamicFont" id=8]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="TileMap" parent="." instance=ExtResource( 3 )]
+tile_data = PoolIntArray( -65506, 1, 65536, 27, 1, 65537, 28, 1, 65538, 29, 1, 65538, 30, 1, 0, 65563, 1, 393217, 65564, 1, 393218, 65565, 1, 393218, 65566, 1, 393219, 131099, 1, 393217, 131100, 1, 393218, 131101, 1, 393218, 131102, 1, 393219, 196635, 1, 393217, 196636, 1, 393218, 196637, 1, 393218, 196638, 1, 393219, 262157, 1, 1, 262158, 1, 2, 262159, 1, 2, 262160, 1, 2, 262161, 1, 3, 262171, 1, 393217, 262172, 1, 393218, 262173, 1, 393218, 262174, 1, 393219, 327707, 1, 393217, 327708, 1, 393218, 327709, 1, 393218, 327710, 1, 393219, 458750, 1, 65537, 458751, 1, 65538, 393216, 1, 65539, 393224, 1, 65537, 393225, 1, 65538, 393226, 1, 65539, 393243, 1, 393217, 393244, 1, 393218, 393245, 1, 393218, 393246, 1, 393219, 524286, 1, 393217, 524287, 1, 393218, 458752, 1, 393219, 458759, 1, 65537, 458760, 1, 65541, 458761, 1, 393218, 458762, 1, 65540, 458763, 1, 65539, 458766, 1, 65537, 458767, 1, 65538, 458768, 1, 65538, 458769, 1, 65539, 458773, 1, 65537, 458774, 1, 65538, 458775, 1, 65538, 458776, 1, 65539, 458778, 1, 65537, 458779, 1, 65541, 458780, 1, 393218, 458781, 1, 393218, 458782, 1, 393219, 589822, 1, 393217, 589823, 1, 393218, 524288, 1, 65540, 524289, 1, 65538, 524290, 1, 65538, 524291, 1, 65538, 524292, 1, 65538, 524293, 1, 65538, 524294, 1, 65538, 524295, 1, 65541, 524296, 1, 393218, 524297, 1, 393218, 524298, 1, 393218, 524299, 1, 65540, 524300, 1, 65538, 524301, 1, 65538, 524302, 1, 65541, 524303, 1, 393218, 524304, 1, 393218, 524305, 1, 65540, 524306, 1, 65538, 524307, 1, 65538, 524308, 1, 65538, 524309, 1, 65541, 524310, 1, 393218, 524311, 1, 393218, 524312, 1, 393219, 524314, 1, 393217, 524315, 1, 393218, 524316, 1, 393218, 524317, 1, 393218, 524318, 1, 393219, 655358, 1, 393217, 655359, 1, 4, 589824, 1, 458754, 589825, 1, 458754, 589826, 1, 458754, 589827, 1, 458754, 589828, 1, 458754, 589829, 1, 458754, 589830, 1, 458754, 589831, 1, 458754, 589832, 1, 458754, 589833, 1, 458754, 589834, 1, 458754, 589835, 1, 458754, 589836, 1, 458754, 589837, 1, 458754, 589838, 1, 458754, 589839, 1, 458754, 589840, 1, 458754, 589841, 1, 458754, 589842, 1, 458754, 589843, 1, 458754, 589844, 1, 458754, 589845, 1, 458754, 589846, 1, 458754, 589847, 1, 458754, 589848, 1, 458755, 589850, 1, 458753, 589851, 1, 458754, 589852, 1, 458754, 589853, 1, 5, 589854, 1, 393219, 720894, 1, 393217, 720895, 1, 393219, 655389, 1, 393217, 655390, 1, 393219, 786430, 1, 393217, 786431, 1, 393219, 720925, 1, 393217, 720926, 1, 393219, 851966, 1, 393217, 851967, 1, 393219, 786461, 1, 393217, 786462, 1, 393219, 917502, 1, 393217, 917503, 1, 393219, 851997, 1, 393217, 851998, 1, 393219, 983038, 1, 393217, 983039, 1, 393219, 917533, 1, 393217, 917534, 1, 393219, 1048574, 1, 393217, 1048575, 1, 393219, 983069, 1, 393217, 983070, 1, 393219, 1114109, 1, 65537, 1114110, 1, 65541, 1114111, 1, 65540, 1048576, 1, 65538, 1048577, 1, 65539, 1048605, 1, 393217, 1048606, 1, 393219, 1179645, 1, 393217, 1179646, 1, 393218, 1179647, 1, 393218, 1114112, 1, 393218, 1114113, 1, 65540, 1114114, 1, 65539, 1114141, 1, 393217, 1114142, 1, 393219, 1245181, 1, 458753, 1245182, 1, 5, 1245183, 1, 4, 1179648, 1, 458754, 1179649, 1, 458754, 1179650, 1, 458755, 1179658, 1, 1, 1179659, 1, 2, 1179660, 1, 2, 1179661, 1, 2, 1179662, 1, 2, 1179663, 1, 3, 1179668, 1, 65537, 1179669, 1, 65538, 1179670, 1, 65538, 1179671, 1, 65538, 1179672, 1, 65538, 1179673, 1, 65538, 1179674, 1, 65538, 1179675, 1, 65538, 1179676, 1, 65538, 1179677, 1, 65541, 1179678, 1, 393219, 1310718, 1, 393217, 1310719, 1, 393219, 1245188, 1, 1, 1245189, 1, 2, 1245190, 1, 2, 1245191, 1, 3, 1245204, 1, 393217, 1245205, 1, 393218, 1245206, 1, 393218, 1245207, 1, 393218, 1245208, 1, 393218, 1245209, 1, 393218, 1245210, 1, 393218, 1245211, 1, 393218, 1245212, 1, 393218, 1245213, 1, 393218, 1245214, 1, 393219, 1376254, 1, 393217, 1376255, 1, 393219, 1310738, 1, 65537, 1310739, 1, 65538, 1310740, 1, 65541, 1310741, 1, 393218, 1310742, 1, 393218, 1310743, 1, 393218, 1310744, 1, 393218, 1310745, 1, 393218, 1310746, 1, 393218, 1310747, 1, 393218, 1310748, 1, 393218, 1310749, 1, 393218, 1310750, 1, 393219, 1441790, 1, 393217, 1441791, 1, 393219, 1376274, 1, 458753, 1376275, 1, 458754, 1376276, 1, 458754, 1376277, 1, 5, 1376278, 1, 393218, 1376279, 1, 393218, 1376280, 1, 393218, 1376281, 1, 393218, 1376282, 1, 393218, 1376283, 1, 393218, 1376284, 1, 393218, 1376285, 1, 393218, 1376286, 1, 393219, 1507326, 1, 393217, 1507327, 1, 393219, 1441813, 1, 393217, 1441814, 1, 393218, 1441815, 1, 393218, 1441816, 1, 393218, 1441817, 1, 393218, 1441818, 1, 393218, 1441819, 1, 393218, 1441820, 1, 393218, 1441821, 1, 393218, 1441822, 1, 393219, 1572862, 1, 393217, 1572863, 1, 393219, 1507349, 1, 393217, 1507350, 1, 393218, 1507351, 1, 393218, 1507352, 1, 393218, 1507353, 1, 393218, 1507354, 1, 393218, 1507355, 1, 393218, 1507356, 1, 393218, 1507357, 1, 393218, 1507358, 1, 65540, 1507359, 1, 65539, 1638398, 1, 393217, 1638399, 1, 65540, 1572864, 1, 65538, 1572865, 1, 65538, 1572866, 1, 65538, 1572867, 1, 65538, 1572868, 1, 65538, 1572869, 1, 65538, 1572870, 1, 65538, 1572871, 1, 65538, 1572872, 1, 65538, 1572873, 1, 65538, 1572874, 1, 65538, 1572875, 1, 65538, 1572876, 1, 65538, 1572877, 1, 65538, 1572878, 1, 65538, 1572879, 1, 65538, 1572880, 1, 65538, 1572881, 1, 65538, 1572882, 1, 65538, 1572883, 1, 65538, 1572884, 1, 65538, 1572885, 1, 65541, 1572886, 1, 393218, 1572887, 1, 393218, 1572888, 1, 393218, 1572889, 1, 393218, 1572890, 1, 393218, 1572891, 1, 393218, 1572892, 1, 393218, 1572893, 1, 393218, 1572894, 1, 393218, 1572895, 1, 393219, 1703934, 1, 393217, 1703935, 1, 4, 1638400, 1, 458754, 1638401, 1, 458754, 1638402, 1, 458754, 1638403, 1, 458754, 1638404, 1, 458754, 1638405, 1, 458754, 1638406, 1, 458754, 1638407, 1, 458754, 1638408, 1, 458754, 1638409, 1, 458754, 1638410, 1, 458754, 1638411, 1, 458754, 1638412, 1, 458754, 1638413, 1, 5, 1638414, 1, 393218, 1638415, 1, 393218, 1638416, 1, 393218, 1638417, 1, 393218, 1638418, 1, 393218, 1638419, 1, 4, 1638420, 1, 458754, 1638421, 1, 458754, 1638422, 1, 458754, 1638423, 1, 458754, 1638424, 1, 458754, 1638425, 1, 458754, 1638426, 1, 458754, 1638427, 1, 458754, 1638428, 1, 458754, 1638429, 1, 458754, 1638430, 1, 458754, 1638431, 1, 458755, 1769470, 1, 458753, 1769471, 1, 458755, 1703949, 1, 458753, 1703950, 1, 458754, 1703951, 1, 458754, 1703952, 1, 458754, 1703953, 1, 458754, 1703954, 1, 458754, 1703955, 1, 458755 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 80, 128 )
+z_index = 10
+jump_force = -140
+
+[node name="Spike" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 144 )
+
+[node name="Spike3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 331, 144 )
+
+[node name="Spike4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 348, 144 )
+
+[node name="Spike5" parent="." instance=ExtResource( 1 )]
+position = Vector2( 364, 144 )
+
+[node name="Spike2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 144 )
+
+[node name="Goal" parent="." instance=ExtResource( 4 )]
+position = Vector2( 16, 280 )
+script = ExtResource( 5 )
+
+[node name="WinText" type="Label" parent="."]
+margin_left = 24.0
+margin_top = 200.0
+margin_right = 88.0
+margin_bottom = 216.0
+rect_scale = Vector2( 2, 2 )
+custom_fonts/font = ExtResource( 8 )
+text = "You Win!"
+align = 1
+valign = 1
+
+[node name="ColorRect" type="ColorRect" parent="WinText"]
+show_behind_parent = true
+margin_right = 68.0
+margin_bottom = 32.0
+color = Color( 0.211765, 0.192157, 0.192157, 1 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 48.0
+margin_top = 232.0
+margin_right = 125.0
+margin_bottom = 252.0
+custom_fonts/font = ExtResource( 8 )
+text = "Play Again"
+
+[node name="Enemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 286, 72 )
+collision_layer = 1
+collision_mask = 2
+
+[node name="Enemy2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 220, 324 )
+
+[node name="Spike6" parent="." instance=ExtResource( 1 )]
+position = Vector2( 12, 432 )
+
+[node name="Spike7" parent="." instance=ExtResource( 1 )]
+position = Vector2( 29, 432 )
+
+[node name="Spike8" parent="." instance=ExtResource( 1 )]
+position = Vector2( 48, 432 )
+
+[node name="Spike9" parent="." instance=ExtResource( 1 )]
+position = Vector2( 64, 432 )
+
+[node name="Spike10" parent="." instance=ExtResource( 1 )]
+position = Vector2( 80, 432 )
+
+[node name="Spike11" parent="." instance=ExtResource( 1 )]
+position = Vector2( 96, 432 )
+
+[node name="Spike12" parent="." instance=ExtResource( 1 )]
+position = Vector2( 112, 432 )
+
+[node name="Spike13" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 432 )
+
+[node name="Spike14" parent="." instance=ExtResource( 1 )]
+position = Vector2( 144, 432 )
+
+[node name="Spike15" parent="." instance=ExtResource( 1 )]
+position = Vector2( 160, 432 )
+
+[node name="Spike16" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176, 432 )
+
+[node name="Spike17" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 432 )
+
+[node name="Spike18" parent="." instance=ExtResource( 1 )]
+position = Vector2( 208, 432 )
+
+[node name="Spike19" parent="." instance=ExtResource( 1 )]
+position = Vector2( 224, 432 )
+
+[node name="Spike20" parent="." instance=ExtResource( 1 )]
+position = Vector2( 240, 432 )
+
+[node name="Spike21" parent="." instance=ExtResource( 1 )]
+position = Vector2( 256, 432 )
+
+[node name="Spike22" parent="." instance=ExtResource( 1 )]
+position = Vector2( 272, 432 )
+
+[node name="Spike23" parent="." instance=ExtResource( 1 )]
+position = Vector2( 288, 432 )
+
+[node name="Spike24" parent="." instance=ExtResource( 1 )]
+position = Vector2( 304, 432 )
+
+[node name="Spike25" parent="." instance=ExtResource( 1 )]
+position = Vector2( 320, 432 )
+
+[node name="Spike26" parent="." instance=ExtResource( 1 )]
+position = Vector2( 336, 432 )
+
+[node name="Spike27" parent="." instance=ExtResource( 1 )]
+position = Vector2( 352, 432 )
+
+[node name="Spike28" parent="." instance=ExtResource( 1 )]
+position = Vector2( 368, 432 )
+
+[node name="TextureRect" type="ColorRect" parent="."]
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 144.0
+margin_bottom = 80.0
+color = Color( 0.211765, 0.192157, 0.192157, 1 )
+
+[node name="Instructions" type="Label" parent="."]
+margin_left = 40.0
+margin_top = 48.0
+margin_right = 168.0
+margin_bottom = 88.0
+custom_fonts/font = ExtResource( 8 )
+text = "Avoid the spikes 
+and get to the flag"
+
+[connection signal="body_entered" from="Goal" to="Goal" method="_on_Goal_body_entered"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

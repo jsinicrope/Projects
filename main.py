@@ -124,13 +124,13 @@ def find_restaurant(location, date, guests, dietary):
 def get_course_prerequisites(course_id, subject):
     science_courses = {
         "101": "None",
-        "201": "101",
-        "301": "201"
+        "202": "101",
+        "303": "202"
     }
     math_courses = {
         "101": "None",
-        "201": "101",
-        "301": "201"
+        "202": "101",
+        "303": "202"
     }
 
     get_course = str(course_id)
@@ -142,8 +142,8 @@ def get_course_prerequisites(course_id, subject):
             return math_courses[get_course]
 
 def assign_student_to_course(student_id, course_id, section_id, subject):
-    science_courses = [101, 201, 301]
-    math_courses = [101, 201, 301]
+    science_courses = [101, 202, 303]
+    math_courses = [101, 202, 303]
     science_intro = ["Fall1", "Fall2", "Spring1", "Spring2"]
     science_mid = ["Fall1", "Fall2", "Spring1", "Spring2"]
     science_high = ["Fall1", "Fall2", "Spring1", "Spring2"]
@@ -158,18 +158,16 @@ def assign_student_to_course(student_id, course_id, section_id, subject):
                     for section in science_intro:
                         if section_id == section:
                             return True
-                elif course == 201:
+                elif course == 202:
                     for section in science_mid:
                         if section_id == section:
                             return True
-                elif course == 301:
+                elif course == 303:
                     for section in science_high:
                         if section_id == section:
                             return True
                 else:
                     return False
-            else:
-                return False
     elif subject == "Math":
         for course in math_courses:
             if course_id == course:
@@ -177,22 +175,21 @@ def assign_student_to_course(student_id, course_id, section_id, subject):
                     for section in math_intro:
                         if section_id == section:
                             return True
-                elif course == 201:
+                elif course == 202:
                     for section in math_mid:
                         if section_id == section:
                             return True
-                elif course == 301:
+                elif course == 303:
                     for section in math_high:
                         if section_id == section:
                             return True
                 else:
                     return False
-            else:
-                return False
     else:
         return False
 
-assign_student_to_course(1, 101, "Fall1", "Science")
-                        
-    
+print(assign_student_to_course(1, 101, "Fall1", "Science"))
+print(assign_student_to_course(2, 202, "Fall1", "Science"))                        
+print(assign_student_to_course(3, 101, "Fall1", "Math"))
+print(assign_student_to_course(4, 303, "Fall1", "Math"))         
     
